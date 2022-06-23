@@ -1,0 +1,6 @@
+module Pods_Somegram {
+  umbrella header "Pods-Somegram-umbrella.h"
+
+  export *
+  module * { export * }
+}
