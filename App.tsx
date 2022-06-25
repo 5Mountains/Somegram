@@ -1,6 +1,7 @@
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import React from 'react';
+import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <SafeAreaView>
       <ScrollView>
