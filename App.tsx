@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {FeedPost} from './src/components/FeedPost';
 
 const App = (): JSX.Element => {
   return (
@@ -8,6 +9,7 @@ const App = (): JSX.Element => {
         <View>
           <Text>Hello from Somegram app</Text>
         </View>
+        <FeedPost />
       </ScrollView>
     </SafeAreaView>
   );
