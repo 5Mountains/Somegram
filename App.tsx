@@ -1,10 +1,9 @@
-import React from 'react';
 import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <ScrollView>
         <View>
           <Text>Hello from Somegram app</Text>
         </View>
