@@ -1,5 +1,5 @@
-import React from 'react';
-import {Image, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, Pressable, Text, View} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
@@ -8,12 +8,23 @@ import {styles} from './styles';
 import {colors} from '../../theme/colors';
 import {Comment} from './Comment';
 import {IPost} from '../../types/models';
+import {DoublePress} from './DoublePress';
 
 interface IFeedPostProps {
   post: IPost;
 }
 
 export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [isPostLicked, setIsPostLicked] = useState(false);
+
+  const toggleDescriptionExpanded = () => {
+    setIsDescriptionExpanded(value => !value);
+  };
+  const togglePostLicked = () => {
+    setIsPostLicked(value => !value);
+  };
+
   return (
     <View style={styles.post}>
       {/* Header */}
@@ -28,17 +39,21 @@ export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
       </View>
 
       {/* Content */}
-      <Image source={{uri: post.image}} style={styles.image} />
+      <DoublePress onDoublePress={togglePostLicked}>
+        <Image source={{uri: post.image}} style={styles.image} />
+      </DoublePress>
 
       {/* Footer */}
       <View style={styles.footer}>
         <View style={styles.iconContainer}>
-          <AntDesign
-            name={'hearto'}
-            size={24}
-            style={styles.iconLeft}
-            color={colors.black}
-          />
+          <Pressable onPress={togglePostLicked}>
+            <AntDesign
+              name={isPostLicked ? 'heart' : 'hearto'}
+              size={24}
+              style={styles.iconLeft}
+              color={isPostLicked ? colors.accent : colors.black}
+            />
+          </Pressable>
           <Ionicons
             name="chatbubble-outline"
             size={24}
@@ -66,9 +81,12 @@ export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
         </Text>
 
         {/* Post description */}
-        <Text style={styles.text}>
+        <Text style={styles.text} numberOfLines={isDescriptionExpanded ? 0 : 3}>
           <Text style={styles.bold}>{post.user.username}</Text>{' '}
           {post.description}
+        </Text>
+        <Text onPress={toggleDescriptionExpanded}>
+          {isDescriptionExpanded ? 'less' : 'more'}
         </Text>
 
         {/* Comments */}
