@@ -6,9 +6,10 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
 import {colors} from '../../theme/colors';
-import {Comment} from './Comment';
+import {Comment} from '../Comment';
 import {IPost} from '../../types/models';
-import {DoublePress} from './DoublePress';
+import {DoublePress} from '../DoublePress';
+import {Carousel} from '../Carousel';
 
 interface IFeedPostProps {
   post: IPost;
@@ -25,6 +26,19 @@ export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
     setIsPostLicked(value => !value);
   };
 
+  let content = null;
+  if (post.image) {
+    content = (
+      <DoublePress onDoublePress={togglePostLicked}>
+        <Image source={{uri: post.image}} style={styles.image} />
+      </DoublePress>
+    );
+  } else if (post.images) {
+    content = (
+      <Carousel onDoublePress={togglePostLicked} images={post.images} />
+    );
+  }
+
   return (
     <View style={styles.post}>
       {/* Header */}
@@ -39,9 +53,7 @@ export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
       </View>
 
       {/* Content */}
-      <DoublePress onDoublePress={togglePostLicked}>
-        <Image source={{uri: post.image}} style={styles.image} />
-      </DoublePress>
+      {content}
 
       {/* Footer */}
       <View style={styles.footer}>
