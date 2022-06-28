@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   video: {
     width: '100%',
     aspectRatio: 1,
+    backgroundColor: `${colors.black}20`,
   },
   muteButton: {
     backgroundColor: colors.black,

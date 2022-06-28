@@ -38,7 +38,7 @@ export const VideoPlayer = ({uri, paused}: IVideoPlayer): JSX.Element => {
       <Video
         source={{uri}}
         style={styles.video}
-        resizeMode="cover"
+        resizeMode="contain"
         repeat
         muted={muted}
         paused={paused}
