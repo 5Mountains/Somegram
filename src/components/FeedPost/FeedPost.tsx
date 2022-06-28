@@ -10,12 +10,14 @@ import {Comment} from '../Comment';
 import {IPost} from '../../types/models';
 import {DoublePress} from '../DoublePress';
 import {Carousel} from '../Carousel';
+import {VideoPlayer} from '../VideoPlayer';
 
 interface IFeedPostProps {
   post: IPost;
+  isVisible: boolean;
 }
 
-export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
+export const FeedPost = ({post, isVisible}: IFeedPostProps): JSX.Element => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isPostLicked, setIsPostLicked] = useState(false);
 
@@ -37,6 +39,8 @@ export const FeedPost = ({post}: IFeedPostProps): JSX.Element => {
     content = (
       <Carousel onDoublePress={togglePostLicked} images={post.images} />
     );
+  } else if (post.video) {
+    content = <VideoPlayer uri={post.video} paused={!isVisible} />;
   }
 
   return (

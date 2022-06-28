@@ -1,8 +1,8 @@
 export const colors = {
   accent: '#ed4956',
 
-  black: '#000',
-  white: '#fff',
-  grey: '#666',
-  lightgrey: '#ccc',
+  black: '#000000',
+  white: '#ffffff',
+  grey: '#666666',
+  lightgrey: '#cccccc',
 };
