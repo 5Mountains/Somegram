@@ -2,13 +2,8 @@ import React, {useState} from 'react';
 import {Text, View, Image, Pressable} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colors} from '../../theme/colors';
-import {IComment} from '../../types/models';
 import {styles} from './styles';
-
-interface ICommentProps {
-  comment: IComment;
-  includeDetails?: boolean;
-}
+import {ICommentProps} from './types';
 
 export const Comment = ({
   comment,

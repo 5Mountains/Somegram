@@ -7,15 +7,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
 import {colors} from '../../theme/colors';
 import {Comment} from '../Comment';
-import {IPost} from '../../types/models';
 import {DoublePress} from '../DoublePress';
 import {Carousel} from '../Carousel';
 import {VideoPlayer} from '../VideoPlayer';
-
-interface IFeedPostProps {
-  post: IPost;
-  isVisible: boolean;
-}
+import {IFeedPostProps} from './types';
 
 export const FeedPost = ({post, isVisible}: IFeedPostProps): JSX.Element => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
