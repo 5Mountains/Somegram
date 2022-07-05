@@ -1,18 +1,10 @@
 import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList} from 'react-native';
 import {Comment} from '../../components/Comment';
 
 import comments from '../../assets/data/comments.json';
-
-interface ICommentsScreenPost {
-  id: string;
-  comment: string;
-  user: {
-    id: string;
-    image: string;
-    username: string;
-  };
-}
+import {ICommentsScreenPost} from './types';
+import {styles} from './styles';
 
 export const CommentsScreen = () => {
   const renderItem = ({item}: {item: ICommentsScreenPost}) => (
@@ -28,9 +20,3 @@ export const CommentsScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-});

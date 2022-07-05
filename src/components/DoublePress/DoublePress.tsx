@@ -1,10 +1,6 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {Pressable} from 'react-native';
-
-interface IDoublePress {
-  onDoublePress?: () => void;
-  children?: ReactNode;
-}
+import {IDoublePress} from './types';
 
 export const DoublePress = ({
   onDoublePress = () => {},
