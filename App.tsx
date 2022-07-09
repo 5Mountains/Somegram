@@ -4,7 +4,7 @@ import {HomeScreen} from './src/screens/HomeScreen';
 
 const App = (): JSX.Element => (
   <SafeAreaView style={styles.root}>
-    <View>
+    <View style={styles.root}>
       <HomeScreen />
     </View>
   </SafeAreaView>
