@@ -7,7 +7,7 @@ import {ICommentsScreenPost} from './types';
 import {styles} from './styles';
 import {InputComponent} from './components';
 
-export const CommentsScreen = () => {
+export const CommentsScreen = (): JSX.Element => {
   const renderItem = ({item}: {item: ICommentsScreenPost}) => (
     <Comment comment={item} includeDetails={true} />
   );

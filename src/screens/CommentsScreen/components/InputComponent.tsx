@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, Image, TextInput, Pressable} from 'react-native';
 import {styles} from './styles';
 
-export const InputComponent = () => {
+export const InputComponent = (): JSX.Element => {
   const [newComment, setNewComment] = useState<string>('');
   const onPost = () => {
     console.log('sended comment --> ', newComment);
