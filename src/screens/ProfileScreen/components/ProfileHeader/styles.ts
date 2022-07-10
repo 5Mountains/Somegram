@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
-
-import {size, weight} from '../../theme/fonts';
-import {colors} from './../../theme/colors';
+import {colors} from '../../../../theme/colors';
+import {size, weight} from '../../../../theme/fonts';
 
 export const styles = StyleSheet.create({
   root: {
@@ -29,5 +28,8 @@ export const styles = StyleSheet.create({
   name: {
     fontWeight: weight.semi,
     color: colors.black,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
   },
 });
