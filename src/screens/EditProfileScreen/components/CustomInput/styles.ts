@@ -1,9 +1,8 @@
 import {StyleSheet} from 'react-native';
-
 import {colors} from '../../../../theme/colors';
 
 export const styles = StyleSheet.create({
-  inputContainer: {
+  root: {
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -12,10 +11,14 @@ export const styles = StyleSheet.create({
   label: {
     width: 90,
   },
-  input: {
+  inputContainer: {
     flex: 1,
+  },
+  input: {
     padding: 5,
     borderBottomWidth: 1,
-    borderColor: colors.border,
+  },
+  error: {
+    color: colors.accent,
   },
 });
