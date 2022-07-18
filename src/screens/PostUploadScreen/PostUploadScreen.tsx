@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {styles} from './styles';
 
-export const PostUploadScreen = () => {
+export const PostUploadScreen = (): JSX.Element => {
   return (
     <View style={styles.root}>
-      <Text>PostUploadScreen</Text>
+      <Text>Post Upload Screen</Text>
     </View>
   );
 };

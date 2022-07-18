@@ -1,11 +1,11 @@
 import React from 'react';
 import {SafeAreaView, View, StyleSheet} from 'react-native';
-import {EditProfileScreen} from './src/screens/EditProfileScreen';
+import {PostUploadScreen} from './src/screens/PostUploadScreen';
 
 const App = (): JSX.Element => (
   <SafeAreaView style={styles.root}>
     <View style={styles.root}>
-      <EditProfileScreen />
+      <PostUploadScreen />
     </View>
   </SafeAreaView>
 );
